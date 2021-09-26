@@ -1,4 +1,5 @@
 .header{
+    max-width: 100vw;
     background: var(--bg);
     display: flex;
     align-items: center;
@@ -47,6 +48,7 @@
     top:115%; right: 7%;
     background: #fff;
     width: 50rem;
+    max-width: 90vw;
     height: 5rem;
     display: flex;
     align-items: center;
