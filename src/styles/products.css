@@ -10,7 +10,7 @@
     padding: 2rem;
 }
 
-.products .box-container .box .icons a{
+.products .box-container .box .icons i{
     height: 5rem;
     width: 5rem;
     line-height: 5rem;
@@ -20,7 +20,7 @@
     margin:.3rem;
 }
 
-.products .box-container .box .icons a:hover{
+.products .box-container .box .icons i:hover{
     background:var(--main-color);
 }
 

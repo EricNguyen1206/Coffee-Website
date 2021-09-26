@@ -6,7 +6,7 @@ import Product3 from '../images/product-3.png'
 const ProductItems = [
     {
         'image': Product1,
-        'like': 'false',
+        'like': false,
         'name': 'fresh coffee',
         'starts': 4.5,
         'price': '$15.99',
@@ -14,7 +14,7 @@ const ProductItems = [
     },
     {
         'image': Product2,
-        'like': 'true',
+        'like': true,
         'name': 'fresh coffee',
         'starts': 4.5,
         'price': '$15.99',
@@ -22,7 +22,7 @@ const ProductItems = [
     },
     {
         'image': Product3,
-        'like': 'false',
+        'like': false,
         'name': 'fresh coffee',
         'starts': 4.5,
         'price': '$19.99',

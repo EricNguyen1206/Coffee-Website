@@ -1,7 +1,16 @@
 import '../styles/products.css'
 import ProductItems from '../apis/ProductItems'
+// import React, { useState } from 'react'
 
 function Products() {
+    // const [favourite, setFavourite] = useState(false)
+
+    // const handleClick = () => {
+    //     let like = document.getElementsByClassName('fa-heart');
+    //     like.classList.toggle('fas')
+    //     like.classList.toggle('far')
+    // }
+
     return (
         <section className="products" id="products">
 
@@ -11,9 +20,9 @@ function Products() {
                 {ProductItems.map(product => (
                     <div  key={product.image} className="box">
                         <div className="icons">
-                            <a href="#" className="fas fa-shopping-cart"></a>
-                            <a href="#" className={`${product.like == 'true' ? 'fas' : 'far'} fa-heart`}></a>
-                            <a href="#" className="fas fa-eye"></a>
+                            <i href="#" className="fas fa-shopping-cart"></i>
+                            <i className={`${product.like ? 'fas' : 'far'} fa-heart`}></i>
+                            <i href="#" className="fas fa-eye"></i>
                         </div>
                         <div className="image">
                             <img src={product.image} alt=""/>
