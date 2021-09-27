@@ -40,6 +40,8 @@ html::-webkit-scrollbar-thumb{
 
 body{
     background: var(--bg);
+    overflow:hidden;
+    /* position: fixed; */
 }
 
 section{
