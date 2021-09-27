@@ -11,7 +11,7 @@ function Contact() {
             <div className="mapouter">
                 <div className="gmap_canvas">
                     <iframe 
-                        className="gmap_iframe" 
+                        className="gmap_iframe map" 
                         frameBorder="0" 
                         scrolling="no" 
                         marginHeight="0" 
