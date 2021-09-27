@@ -1,15 +1,19 @@
 import '../styles/products.css'
 import ProductItems from '../apis/ProductItems'
-// import React, { useState } from 'react'
+import React, { useState } from 'react'
 
 function Products() {
-    // const [favourite, setFavourite] = useState(false)
+    const [ProductLists, setProducts] = useState(ProductItems)
 
-    // const handleClick = () => {
-    //     let like = document.getElementsByClassName('fa-heart');
-    //     like.classList.toggle('fas')
-    //     like.classList.toggle('far')
-    // }
+    const onToggleFavorite = (productId) => {
+        setProducts(products => (
+            products.map(product =>({
+                ...product,
+                favourite: product.id === productId ? !product.favourite : product.favourite,
+            }))
+        ))
+        // onToggleFavorite(productId)
+    }
 
     return (
         <section className="products" id="products">
@@ -17,11 +21,11 @@ function Products() {
             <h1 className="heading"> our <span>products</span> </h1>
 
             <div className="box-container">
-                {ProductItems.map(product => (
-                    <div  key={product.image} className="box">
+                {ProductLists.map(product => (
+                    <div  key={product.id} className="box">
                         <div className="icons">
                             <i href="#" className="fas fa-shopping-cart"></i>
-                            <i className={`${product.like ? 'fas' : 'far'} fa-heart`}></i>
+                            <i onClick={() => onToggleFavorite(product.id)} className={`${product.favourite ? 'fas' : 'far'} fa-heart`}></i>
                             <i href="#" className="fas fa-eye"></i>
                         </div>
                         <div className="image">

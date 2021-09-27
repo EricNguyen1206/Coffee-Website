@@ -5,24 +5,27 @@ import Product3 from '../images/product-3.png'
 
 const ProductItems = [
     {
+        'id': 'product-1',
         'image': Product1,
-        'like': false,
+        'favourite': false,
         'name': 'fresh coffee',
         'starts': 4.5,
         'price': '$15.99',
         'old-price': '$20.99'
     },
     {
+        'id': 'product-2',
         'image': Product2,
-        'like': true,
+        'favourite': true,
         'name': 'fresh coffee',
         'starts': 4.5,
         'price': '$15.99',
         'old-price': ''
     },
     {
+        'id': 'product-3',
         'image': Product3,
-        'like': false,
+        'favourite': false,
         'name': 'fresh coffee',
         'starts': 4.5,
         'price': '$19.99',
