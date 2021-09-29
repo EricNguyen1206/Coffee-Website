@@ -1,11 +1,11 @@
 import '../styles/menu.css'
 import MenuItems from '../apis/MenuItems'
-// import MenuIcon from '../images/menu-1.png'
+function Menu({ CartList, onAddItem }) {
 
-function Menu() {
     return (
         <section className="menu" id="menu">
-
+            {console.log('check menu: ', MenuItems)}
+            {console.log('check cart: ', CartList)}
             <h1 className="heading"> our <span>menu</span> </h1>
 
             <div className="box-container">
@@ -14,11 +14,17 @@ function Menu() {
                         <img src={ item.images } alt="coffee images"/>
                         <h3>{item.title}</h3>
                         <div className="price">{item.price} <span>{item['old-price']}</span></div>
-                        <a href="#" className="btn">add to cart</a>
+                        <button onClick={() => onAddItem({
+                            images: item.images,
+                            name: item.title,
+                            price: item.price
+                        })} 
+                        type="button" 
+                        className="btn">add to cart</button>
                     </div>
                 ))}
             </div>
-
+            {/* onClick={handleCart(item.images, item.title, item.price)} */}
         </section>
     )
 }

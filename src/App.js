@@ -8,18 +8,22 @@ import Review from './components/Review'
 import Contact from './components/Contact'
 import Blogs from './components/Blogs'
 import Footer from './components/Footer'
+import CartItem from './apis/CartItem'
+import React, { useState } from 'react'
 
 
 function App() {
+  const [CartList, updateCart] = useState(CartItem)
+
   return (
     <div className="App">
-      <Header />
+      <Header CartList={CartList}/>
 
       <Home />
 
       <About />
 
-      <Menu />
+      <Menu CartList={CartList} onAddItem={item => {updateCart(CartList.push(item)); console.log('check update:', CartList)}} />
 
       <Products />
 

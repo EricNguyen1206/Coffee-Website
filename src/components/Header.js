@@ -1,9 +1,9 @@
 import logo from '../images/logo.png';
-import CartItem from '../apis/CartItem';
+// import CartItem from '../apis/CartItem';
 import '../styles/header.css'
 import React, { useState, useEffect } from 'react'
 
-function Header() {
+function Header({ CartList }) {
     const [cartActive, setCartActive] = useState(false)
     const [searchActive, setSearchActive] = useState(false)
     const [navbarActive, setNavbarActive] = useState(false)
@@ -40,7 +40,6 @@ function Header() {
     
     return (
         <header className="header">
-
             <a href="#" className="logo">
                 <img src={logo} alt="" />
             </a>
@@ -67,7 +66,7 @@ function Header() {
             </div>
 
             <div className={`cart-items-container ${cartActive ? 'active': ''}`}>
-                {CartItem.map((item) => (
+                {CartList.map((item) => (
                     <div key={item.images} className="cart-item">
                         <span className="fas fa-times"></span>
                         <img src={item.images} alt=""/>
