@@ -23,7 +23,7 @@ function App() {
 
       <About />
 
-      <Menu CartList={CartList} onAddItem={item => {updateCart(CartList.push(item)); console.log('check update:', CartList)}} />
+      <Menu CartList={CartList} onAddItem={item => {updateCart([...CartList, item]); console.log('check update:', CartList)}} />
 
       <Products />
 
