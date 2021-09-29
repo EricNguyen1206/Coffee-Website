@@ -1,9 +1,11 @@
 import '../styles/products.css'
 import ProductItems from '../apis/ProductItems'
+// import CartItem from '../apis/CartItem'
 import React, { useState } from 'react'
 
 function Products() {
     const [ProductLists, setProducts] = useState(ProductItems)
+    // const [CartList, setCartList] = useState(CartItem)
 
     const onToggleFavorite = (productId) => {
         setProducts(products => (
@@ -14,6 +16,10 @@ function Products() {
         ))
         // onToggleFavorite(productId)
     }
+
+    // const toAddProduct = (product) => {
+    //     setCartList
+    // }
 
     return (
         <section className="products" id="products">

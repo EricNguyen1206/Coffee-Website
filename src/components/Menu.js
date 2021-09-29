@@ -10,7 +10,7 @@ function Menu() {
 
             <div className="box-container">
                 {MenuItems.map((item) => (
-                    <div key={item.images} className="box">
+                    <div key={item.id} id={item.id} className="box">
                         <img src={ item.images } alt="coffee images"/>
                         <h3>{item.title}</h3>
                         <div className="price">{item.price} <span>{item['old-price']}</span></div>
