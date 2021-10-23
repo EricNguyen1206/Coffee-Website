@@ -14,10 +14,10 @@ function  Blogs() {
                             <img src={blog.image} alt=""/>
                         </div>
                         <div className="content">
-                            <a href="#" className="title">{blog.title}</a>
+                            <a href="/" className="title">{blog.title}</a>
                             <span>by {blog.author} / {blog['export-date']}</span>
                             <p>{blog.introduction}</p>
-                            <a href="#" className="btn">read more</a>
+                            <a href="/" className="btn">read more</a>
                         </div>
                     </div>
 

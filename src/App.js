@@ -2,30 +2,64 @@ import './App.css'
 import Header from './components/Header'
 import Home from './components/Home'
 import About from './components/About'
-import Menu from './components/Menu'
 import Products from './components/Products'
+import Favourite from './components/Favourite'
 import Review from './components/Review'
 import Contact from './components/Contact'
 import Blogs from './components/Blogs'
 import Footer from './components/Footer'
-import CartItem from './apis/CartItem'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 
 function App() {
-  const [CartList, updateCart] = useState(CartItem)
+  const [cartList, setCartList] = useState([])
+  const [images, setImages] = useState([])
+
+  useEffect(() => {
+    async function fetchProductsList() {
+      const requestUrl = 'http://localhost:8000/api/cart'
+      const response = await fetch(requestUrl)
+      const products = await response.json()
+      setCartList(products)
+    }
+
+    async function fetchImages() {
+      const requestUrl = 'http://localhost:8000/api/images'
+      const response = await fetch(requestUrl)
+      const images = await response.json()
+      console.log(images)
+      setImages(images)
+    }
+
+    fetchImages()
+    fetchProductsList()
+
+
+  }, []);
+
+  const handleRemoveItem = (id) => {
+    setCartList(cartList.filter(item => item.id !== id))
+  }
+
+  const handleAddItem = (item) => {
+    console.log("Check include: ", cartList.find(cart => cart.id === item.id))
+
+    if(!cartList.find(cart => cart.id === item.id)) {
+      setCartList([...cartList, item])
+    }
+  }
 
   return (
     <div className="App">
-      <Header CartList={CartList}/>
+      <Header CartList={cartList} onDeleteItem={id => {handleRemoveItem(id)}} logo={images.logo}/>
 
-      <Home />
+      <Home homeBanner={images["home-banner"]}/>
+      
+      <Favourite />
 
-      <About />
+      <About aboutBanner={images["about-banner"]} />
 
-      <Menu CartList={CartList} onAddItem={item => {updateCart([...CartList, item]); console.log('check update:', CartList)}} />
-
-      <Products />
+      <Products onAddItem={item => {handleAddItem(item)}} />
 
       <Review />
 

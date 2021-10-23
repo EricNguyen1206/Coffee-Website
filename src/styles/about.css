@@ -7,6 +7,7 @@
 
 .about .row .image{
     flex:1 1 45rem;
+    height: 408px;
 }
 
 .about .row .image img{

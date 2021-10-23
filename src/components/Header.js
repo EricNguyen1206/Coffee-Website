@@ -1,9 +1,7 @@
-import logo from '../images/logo.png';
-// import CartItem from '../apis/CartItem';
 import '../styles/header.css'
 import React, { useState, useEffect } from 'react'
 
-function Header({ CartList }) {
+function Header({ CartList, onDeleteItem, logo }) {
     const [cartActive, setCartActive] = useState(false)
     const [searchActive, setSearchActive] = useState(false)
     const [navbarActive, setNavbarActive] = useState(false)
@@ -14,7 +12,6 @@ function Header({ CartList }) {
             setSearchActive(false)
             setNavbarActive(false)
         };
-    
         window.addEventListener("scroll", handleScroll, { passive: true });
     
         return () => window.removeEventListener("scroll", handleScroll);
@@ -40,7 +37,7 @@ function Header({ CartList }) {
     
     return (
         <header className="header">
-            <a href="#" className="logo">
+            <a href="/" className="logo">
                 <img src={logo} alt="" />
             </a>
 
@@ -65,20 +62,21 @@ function Header({ CartList }) {
                 <label for="search-box" className="fas fa-search"></label>
             </div>
 
-            <div className={`cart-items-container ${cartActive ? 'active': ''}`}>
-                {CartList.map((item) => (
-                    <div key={item.images} className="cart-item">
-                        <span className="fas fa-times"></span>
-                        <img src={item.images} alt=""/>
-                        <div className="content">
-                            <h3>{item.name}</h3>
-                            <div className="price">{item.price}/-</div>
-                        </div>
-                    </div>
+            <div className={`cart-container ${cartActive ? 'active': ''}`}>
+                <ul className="cart-list">
+                    {CartList.map((item) => (
+                        <li key={item.id} className="cart-item">
+                            <span onClick={() => onDeleteItem(item.id)} className="fas fa-times"></span>
+                            <img src={item.image} alt=""/>
+                            <div className="content">
+                                <h3>{item.name}</h3>
+                                <div className="price">{item.price}/-</div>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
 
-                ))}
-
-                <a href="#" className="btn">checkout now</a>
+                <a href="/" className="btn">checkout now</a>
             </div>
 
         </header>

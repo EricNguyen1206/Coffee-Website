@@ -10,16 +10,7 @@ function Contact() {
 
             <div className="mapouter">
                 <div className="gmap_canvas">
-                    <iframe 
-                        className="gmap_iframe map" 
-                        frameBorder="0" 
-                        scrolling="no" 
-                        marginHeight="0" 
-                        marginWidth="0" 
-                        src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Ho Chi Minh&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" 
-                        allowFullScreen="" 
-                        loading="lazy"
-                    ></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1903.483835768144!2d106.78677780251374!3d10.847980150779197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752772b245dff1%3A0xb838977f3d419d!2sPosts%20and%20Telecommunications%20Institute%20of%20Technology%20HCM%20Branch!5e0!3m2!1sen!2sus!4v1634393223691!5m2!1sen!2sus" width="600" height="450" allowfullscreen="" loading="lazy" className="gmap_iframe map" title="map"></iframe>
                 </div>
             </div>
 
