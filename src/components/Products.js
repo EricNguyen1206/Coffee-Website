@@ -1,13 +1,12 @@
 import '../styles/menu.css'
 import React, { useState, useEffect } from 'react'
-import MenuItems from '../apis/MenuItems'
 
 function Menu({ onAddItem }) {
     const [products, setProducts] = useState([])
 
     useEffect(() => {
         async function fetchProductsList() {
-            const requestUrl = 'http://localhost:8000/api/products'
+            const requestUrl = 'https://coffee-json-server.herokuapp.com/api/products'
             const response = await fetch(requestUrl)
             const data = await response.json()
 
@@ -24,12 +23,12 @@ function Menu({ onAddItem }) {
             <div className="box-container">
                 {products.map((item) => (
                     <div key={item.id} id={item.id} className="box">
-                        <img src={ item.images } alt="coffee images"/>
+                        <img src={ item.image } alt="coffee images"/>
                         <h3>{item.title}</h3>
                         <div className="price">{item.price} <span>{item['old-price']}</span></div>
                         <button onClick={() => onAddItem({
                             id: item.id,
-                            images: item.images,
+                            image: item.image,
                             name: item.title,
                             price: item.price
                         })} 

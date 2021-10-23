@@ -3,9 +3,6 @@
 ::-webkit-scrollbar-button{width:2px;height:2px;}
 
 .menu .box-container{
-    /* display: flex;
-    flex-wrap: wrap; */
-    /* justify-content: space-around; */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 }
@@ -92,8 +89,9 @@
 
 
     .menu .box-container .box{
-        margin-right: 20px;
-        min-width: 91vw;
+        margin-right: 10px;
+        margin-left: 0;
+        min-width: 49vw;
         height: 92vw;
     }
 

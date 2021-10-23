@@ -17,14 +17,14 @@ function App() {
 
   useEffect(() => {
     async function fetchProductsList() {
-      const requestUrl = 'http://localhost:8000/api/cart'
+      const requestUrl = 'https://coffee-json-server.herokuapp.com/api/cart'
       const response = await fetch(requestUrl)
       const products = await response.json()
       setCartList(products)
     }
 
     async function fetchImages() {
-      const requestUrl = 'http://localhost:8000/api/images'
+      const requestUrl = 'https://coffee-json-server.herokuapp.com/api/images'
       const response = await fetch(requestUrl)
       const images = await response.json()
       console.log(images)

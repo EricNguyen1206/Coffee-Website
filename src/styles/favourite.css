@@ -1,0 +1,126 @@
+.products .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.products .box-container .box{
+    text-align: center;
+    border:var(--border);
+    padding: 2rem;
+}
+
+.products .box-container .box .icons {
+    z-index: 10;
+}
+
+.products .box-container .box .icons i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    /* border:var(--border); */
+    border: none;
+    color: #000;
+    margin:.3rem;
+}
+
+/* .products .box-container .box .icons i:hover{
+    background:var(--main-color);
+} */
+
+.products .box-container .box .image{
+    position: relative;
+    padding-bottom: 2.5rem;
+}
+
+.products .box-container .box .image .products-left {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    width: 50px;
+    height: 16px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+
+}
+
+.products .box-container .box .image .products-left.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products .box-container .box .image .sole-out {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 2.5rem);
+    background-color: rgba(30, 30, 30, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.products .box-container .box .image .sole-out span {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #fff;
+    z-index: 10;
+}
+
+.products .box-container .box .image .sole-out.active {
+    visibility: visible;
+}
+
+.products .box-container .box .image .add-to-cart.active {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 2.5rem);
+    background-color: rgba(255, 255, 255, 0.7);
+    /* visibility: hidden; */
+}
+
+.products .box-container .box .image .add-to-cart.active:hover {
+    visibility: visible;
+}
+
+.products .box-container .box .image img{
+    z-index: 1;
+    width: 100%;
+    height: 25rem;
+}
+
+.products .box-container .box .content h3{
+    color:#fff;
+    font-size: 2.5rem;
+}
+
+.products .box-container .box .content .stars{
+    padding: 1.5rem;
+}
+
+.products .box-container .box .content .stars i{
+    font-size: 1.7rem;
+    color: var(--main-color);
+}
+
+.products .box-container .box .content .price{
+    color:#fff;
+    font-size: 2.5rem;
+}
+
+.products .box-container .box .content .price span{
+    text-decoration: line-through;
+    font-weight: lighter;
+    font-size: 1.5rem;
+}
