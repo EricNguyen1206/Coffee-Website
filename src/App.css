@@ -75,6 +75,10 @@ section{
     letter-spacing: .2rem;
 }
 
+.App {
+    position: relative;
+}
+
 @media (max-width:991px){
 
     html{

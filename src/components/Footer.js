@@ -1,4 +1,5 @@
-import '../styles/footer.css'
+import { memo } from "react";
+import "../styles/footer.css";
 
 function Footer() {
     return (
@@ -28,12 +29,13 @@ function Footer() {
                     <a href="#" className="fab fa-twitter"></a>
                     <a href="#" className="fab fa-instagram"></a>
                 </div>
-                <div className="credit">© 2021 | created by <span>Eric Nguyen</span> | all rights reserved</div>
+                <div className="credit">
+                    © 2021 | created by <span>Eric Nguyen</span> | all rights
+                    reserved
+                </div>
             </div>
-
-
         </footer>
-    )
+    );
 }
 
-export default Footer
+export default memo(Footer);
